@@ -1,0 +1,32 @@
+<div class="">
+  <div class="">
+    <p class="login-box-msg">Укажите email и мы вышлем инструкции для его восстановления</p>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: {method: :post}) do |f| %>
+
+      <%= devise_error_messages! %>
+
+      <div class="box-body">
+        <div class="form-group has-feedback">
+          <div class="">
+            <%= f.email_field :email, autofocus: true, class: 'form-control' %>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </div>
+        </div>
+      </div>
+      <div class="box-footer">
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.submit "Отправить инструкции", class: 'btn btn-primary btn-block btn-flat' %>
+          </div>
+          <div class="col-md-12">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+
+  <% end %>
+
+
+</div>

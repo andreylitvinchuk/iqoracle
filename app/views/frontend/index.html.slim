@@ -1,0 +1,264 @@
+/! Begin: "Шапка сайта"
+.header
+  .container
+    .header_info
+      .header_info_location
+        =link_to '#', class:'header_info_location_text' do
+          | Санкт-Петербург
+          span.header_info_location_arrow href='#' ^
+      .header_info_number
+        =link_to '+7 (812) 702 66 10', 'tel:88127026610'
+      a.header_info_logo href='#'
+        span.header_info_logo__slogan сеть свадебных салонов
+      .header_info_btn
+        a href="#"  Записаться на примерку
+    .header_link
+      .header_link_social
+        =image_tag 'viber.svg'
+        =image_tag 'what.svg'
+        =image_tag 'vk.svg'
+        =image_tag 'instagram.svg'
+      .header_link_link
+        a href="#"  Cвадебные платья
+        a href="#"  Аксессуары
+        a href="#"  О компании
+        a href="#"  Статьи
+        a href="#"  Контакты
+      .header_link_dress-info
+        =image_tag 'miniDress.svg', class:'header_link_dress-info__image'
+        .header_link_dress-info__text
+          |В примерочной
+          br
+          |5 платьев
+.main-content
+  .container
+    .header_about-company
+      h1.header__main-title
+        | Свадебные платья собственного производства
+        br
+        | в наличии и под заказ
+    .header_user-guide
+      .header_user-guide_left
+        =image_tag 'dress.svg', class:'header_user-guide_left-picture'
+        .header_user-guide_text Свадебных платьев в наличии
+      .header_user-guide_center
+        .header_user-guide_center_link
+          a.button.button-blue.header_user-guide_center_link_video href="#"  Смотреть видео
+          a.button.button-pink.header_user-guide_center_link_dir href="#"  Перейти в каталог
+        .header_user-guide_center_info
+          =image_tag 'otherDress.svg'
+          .header_user-guide_text
+            | У нас можно мерять в неограниченном
+            br
+            | количестве, пока не найдем платье мечты
+      .header_user-guide_right
+        =image_tag 'bobbin.svg'
+        .header_user-guide_text
+          | Если не оказалось необходимого размера, сошьем под заказ
+          | и подарим скидку за ожидание
+/! End: "Шапка сайта"
+/! Begin: "Подберите платье по силуэту"
+.container
+  .content_type-dress
+    .h2 Подберите платье по силуэту
+    .content_type-dress_container.row
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_1
+        a.content_type-dress_container_link href="#"
+          p А-Силуэт
+          .content_type-dress_container_image
+            =inline_svg 'silhouette1.svg'
+          /=image_tag src='silhouette1.svg', class:'content_type-dress_container_image'
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_2
+        a.content_type-dress_container_link href="#"
+          p Короткие
+          .content_type-dress_container_image
+            =inline_svg 'silhouette2.svg'
+          /=image_tag src='silhouette2.svg', class:'content_type-dress_container_image'
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_1
+        a.content_type-dress_container_link href="#"
+          p Пышные
+          .content_type-dress_container_image
+            =inline_svg 'silhouette3.svg'
+          /=image_tag src='silhouette3.svg', class:'content_type-dress_container_image'
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_2
+        a.content_type-dress_container_link href="#"
+          p Рыбка Русалка
+          .content_type-dress_container_image
+            =inline_svg 'silhouette4.svg'
+          /=image_tag src='silhouette4.svg', class:'content_type-dress_container_image'
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_1
+        a.content_type-dress_container_link href="#"
+          p А-Силуэт
+          .content_type-dress_container_image
+            =inline_svg 'silhouette5.svg'
+          /=image_tag src='silhouette5.svg', class:'content_type-dress_container_image'
+      .col-xs-12.col-md-4.col-lg-2.content_type-dress_container_2
+        a.content_type-dress_container_link href="#"
+          p Короткие
+          .content_type-dress_container_image
+            =inline_svg 'silhouette6.svg'
+          /=image_tag src='silhouette6.svg', class:'content_type-dress_container_image'
+/! End: "Подберите платье по силуэту"
+/! Begin: "Подборки"
+.container
+  .content-exemple-dress.js-masonry-exemple
+    .h2 Подборки
+    .main-gallery.row
+      .col-xs-5
+        a.main-gallery__block.main-gallery__block_top-left1 href="#"
+          .main-gallery__block-header Пышные с рукавами
+          =image_tag 'https://s-media-cache-ak0.pinimg.com/736x/fa/e5/e2/fae5e20182bdbc15e8775109f61ac5cd.jpg', class:'main-gallery__image'
+        a.main-gallery__block href="#"
+          .main-gallery__block-header Короткие с открытой спиной
+          =image_tag 'http://videoforme.ru/wp-content/uploads/2013/04/свадебное-платье-по-типу-фигуры.jpg', class:'main-gallery__image'
+      .col-xs-4
+        a.main-gallery__block href="#"
+          .main-gallery__block-header Легкие
+          = image_tag 'https://static.sakh.com/market/files/b/b/2016/02/27/85949c65a6e3b69e93fc6fd343f3204c.jpeg', class: 'main-gallery__image'
+        a.main-gallery__block.main-gallery__block_top href="#"
+          .main-gallery__block-header Цветные
+          = image_tag 'http://krasnyj-cvet.ru/gallery/krasnye-svadebnye-platja/krasnoe_svadebnoe_plate-16.jpg', class: 'main-gallery__image'
+      .col-xs-3
+        a.main-gallery__block.main-gallery__block_top-left2 href="#"
+          .main-gallery__block-header Серьги
+          = image_tag 'http://georgii56.ru/proekt/uvelir/images/images554-Sergi.jpg', class: 'main-gallery__image'
+        a.main-gallery__block.main-gallery__block_bottom-right  href="#"
+          .main-gallery__block-header Шубки
+          = image_tag 'http://vshubke.ru/media/catalog/product/cache/1/image/1200x1200/29b3e7a582084d4461280b6ffac733d7/k/o/komoovogue-women-s-sheared-mink-fur-coat-jacket-with-85cm-length.jpg', class: 'main-gallery__image'
+
+.container
+  .row.gallery-offers
+    .col-xs-12.col-md-4.gallery-offers__item
+      .gallery-offers__image
+        =image_tag '1.png'
+      .gallery-offers__text
+        |Хочется такое же платье, но с другой юбкой, корсетом, вырезом, и т.д?
+        br
+        |Мы готовы скомбинировать любые детали от разных платьев в одно целое.
+    .col-xs-12.col-md-4.gallery-offers__item
+      .gallery-offers__image
+        = image_tag '2.png'
+      .gallery-offers__text
+        | Вам не придется объяснять, в очередной раз, свои предпочтения. После записи на примерку, мы увидим и сохраним весь список понравившихся платьев. На примерке вынесем все, и предложим свое!
+    .col-xs-12.col-md-4.gallery-offers__item
+      .gallery-offers__image
+        = image_tag '3.png'
+      .gallery-offers__text
+        |Бесплатно подготовим платье к свадьбе и проведем инструктаж по его использованию.
+
+    .col-xs-12.text-center
+      =link_to 'Записаться на примерку', '#', class:'button button-pink gallery-offers__button'
+
+/! End: "Подборки"
+/! Begin: "Видео"
+.container
+  .main-video
+    p.h1 Видеопрезентация нашей новой коллекции
+    iframe.main-video__frame width="1170" height="600" src="https://www.youtube.com/embed/51SOc54jwdg" frameborder="0" allowfullscreen
+/! End: "Видео"
+/! Begin: "Акссесуары"
+.container.accessorize
+  .content-exemple-dress.js-masonry-exemple
+    .h2 Аксессуары
+    .main-gallery.row
+      .col-xs-3
+        a.main-gallery__block href="#"
+          .main-gallery__block-header Пояса
+          = image_tag 'https://cs5.livemaster.ru/storage/2b/bc/963a7be5a3a4aef854d72392e8i9--svadebnyj-salon-poyas-svadebnyj-shelkovyj.jpg', class: 'main-gallery__image'
+        a.main-gallery__block.main-gallery__block_top2 href="#"
+          .main-gallery__block-header Туфли
+          = image_tag 'http://vivabride.ru/upload/iblock/494/49453c3dbca40c8158282f47708bbd37.jpg', class: 'main-gallery__image'
+        a.main-gallery__block.main-gallery__block_top-right2 href="#"
+          .main-gallery__block-header Пальто
+          = image_tag 'http://i1.weddingfur.ru/1/5219/52188444/afacdb/svedebnoe-sherstyanoe-beloe-palto.jpg', class: 'main-gallery__image'
+      .col-xs-9
+        .row
+          .col-xs-4
+            a.main-gallery__block.main-gallery__block_top-right href="#"
+              .main-gallery__block-header Фаты
+              = image_tag 'https://svadbagolik.ru/images/article/19704.600x820.1455893022.jpg', class: 'main-gallery__image'
+          .col-xs-4
+            a.main-gallery__block href="#"
+              .main-gallery__block-header Веточки в прическу
+              = image_tag 'http://img3.postila.ru/storage/11968000/11942776/1ef3219f52d727b5ae66bcc93f5c37d3.jpg', class: 'main-gallery__image'
+          .col-xs-4
+            a.main-gallery__block.main-gallery__block_bottom-left href="#"
+              .main-gallery__block-header Серьги
+              = image_tag 'https://cs1.livemaster.ru/storage/55/04/729c2e4c083776cfda52102333sw--svadebnyj-salon-kruzhevnye-svadebnye-sergi-shampan-ajvori-anka.jpg', class: 'main-gallery__image'
+          .col-xs-12
+            .accessorize_pic
+              =inline_svg 'accessorize_pic.svg'
+          .col-xs-4
+            a.main-gallery__block href="#"
+              = image_tag 'http://monamur-ryazan.ru/images/images-photo/svadeb-plat/a-siluet/4.jpeg', class: 'main-gallery__image'
+          .col-xs-4
+            a.main-gallery__block.main-gallery__block_bottom-right2 href="#"
+              = image_tag 'https://ae01.alicdn.com/kf/HTB1cga8LXXXXXboaXXXq6xXFXXXO/ADLN-2017-Модест-Длинным-Рукавом-Арабский-Свадебные-Платья-A-Line-Кружева-Романтический-Плюс-Размер-Винтаж-Дешевые.jpg', class: 'main-gallery__image'
+          .col-xs-4
+            a.main-gallery__block href="#"
+              = image_tag 'https://ae01.alicdn.com/kf/HTB1SCfRJVXXXXazXVXXq6xXFXXXz/2016-принцессы-элегантный-кот-кружева-иллюзия-рукава-из-бисера-пояс-пышные-юбки-бальное-платье-свадебные-платья.jpg', class: 'main-gallery__image'
+
+
+  /! End: "Акссесуары"
+/! Begin: "Отзывы наших невест"
+.container.review
+  .h1
+    |Отзывы наших невест
+    =link_to 'Смотрeть все', '#', class:'pull-right show_all'
+  .row.review__container
+    .col-xs-12.col-md-6
+      .review-item
+        .review-item__container
+          .review-item__photo(style="background-image: url('http://kievpravda.com/media/images/22005/raw/97e0490f19b00988dd290a9895857f5a.jpg');")
+          .review-item__name
+            | Дарья Васильева
+            =link_to '#' do
+              i.fa.fa-vk.review-item__icon
+          .review-item__review
+            |Спасибо огромное свадебному салону Венеция за мое потрясающее платье. Я не была в других салонах и ничуть об этом не пожалела, потому что здесь можно найти платье на любой вкус. Очень понравилось обслуживание, очень добрая, приветливая, терпеливая женщина с которой хочется общаться и общаться. Спасибо Вам большое! )
+    .col-xs-12.col-md-6
+      .review-item
+        .review-item__container
+          .review-item__photo(style="background-image: url('http://mango34.ru/upload/iblock/256/256491eca8b1e7c42eb0cf8065bb6c30.jpg');")
+          .review-item__name
+            | Наталья Иванова
+            =link_to '#' do
+              i.fa.fa-vk.review-item__icon
+          .review-item__review
+            |Спасибо огромное свадебному салону Венеция за мое потрясающее платье. Я не была в других салонах и ничуть об этом не пожалела, потому что здесь можно найти платье на любой вкус. Спасибо!
+
+    .col-xs-12.col-md-6
+/! End: "Отзывы наших невест"
+/! Begin: "Мы в instagram"
+.instagram
+  p.h1 Мы в instagram
+  p #veneziawedd
+  .instagram_img
+/! Todo:
+/! Через руби/js цикл добавить картинки?
+/! End: "Мы в instagram"
+/! Begin: "Есть вопросы?"
+.question
+  p.h1 Есть вопросы?
+  p.h2 С удовольствием ответим на них и пришлем фотографии деталей платьев
+  .question_form
+    form action=""
+      p
+      p
+      input placeholder=("+7 (___)___ __ __") /
+      .question_form_submit
+  .social.question_social
+/! End: "Есть вопросы?"
+.footer
+  .grid-1-4.footer_col-1-4
+  .grid-1-4.footer_col-2-4
+  .grid-1-4.footer_col-3-4
+  .grid-1-4.footer_col-4-4
+    p.footer_text_title
+    p.footer_text
+    .social
+    .btn
+/! Права
+.Copyright
+  .Copyright_left
+  .Copyright_right

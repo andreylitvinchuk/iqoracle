@@ -1,0 +1,42 @@
+section.content-header
+  ol.breadcrumb
+    li
+      a href="/"
+        i.fa.fa-dashboard
+        | Главная
+    li.active Профиль
+
+h1 Профиль
+.row
+  .col-md-6
+    .box.box-primary
+      .box-body
+        = simple_form_for @user, :url => profile_path, :html => { :method => :put } do |f|
+          /= f.error_messages
+          .form-group
+            = f.label :name, 'ФИО'
+            = f.input :name, input_html: { class: 'form-control' }, label: false
+          .form-group
+            = f.label :email, 'Email'
+            = f.input :email, input_html: { class: 'form-control' }, label: false
+          .form-group
+            = f.label :password, 'Пароль'
+            = f.input :password , :error_html => { :id => "password_error"}, input_html: { class: 'form-control' }, label: false
+          .form-group
+            = f.label :password_confirmation, 'Подтверждение пароля'
+            = f.input :password_confirmation, input_html: { class: 'form-control' }, label: false
+          .form-group
+            = f.button :submit, 'Сохранить', class: 'btn btn-primary'
+  .col-md-6
+    -if current_user.has_role? :admin
+      = link_to 'Пригласить пользователя', new_user_invitation_path
+      /br
+      /= link_to 'Подключить Yandex аккаунт', user_yandex_omniauth_authorize_path
+      /- current_user.identities.where(provider: 'yandex').each do |identity|
+      /  br
+      /  = "Yandex #{identity.login}"
+      /br
+      /= link_to 'Подключить Google аккаунт', user_google_oauth2_omniauth_authorize_path
+      /- current_user.identities.where(provider: 'google_oauth2').each do |identity|
+      /  br
+      /  = "Google #{identity.email}"

@@ -1,0 +1,42 @@
+<section class="content-header">
+  <ol class="breadcrumb">
+    <li>
+      <a href="/">
+        <i class="fa fa-dashboard"></i> Главная
+      </a>
+    </li>
+    <li class="active">
+      <%= t "devise.invitations.new.header" %>
+    </li>
+  </ol>
+</section>
+<div class="box  col-xs-12 col-md-offset-2 col-md-8 col-lg-6 col-lg-offset-3">
+  <div class="box-header with-border">
+    <h3 class="box-title"><%= t "devise.invitations.new.header" %></h3>
+  </div>
+
+  <div class="row">
+    <%= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: {method: :post} do |f| %>
+        <div class="col-xs-12 col-md-12">
+          <div class="box-body">
+            <%= devise_error_messages! %>
+            <div class="form-group">
+              <%= f.label 'name', 'Имя' %>
+              <%= f.text_field 'name', class: 'form-control' %>
+
+            </div>
+            <% resource.class.invite_key_fields.each do |field| -%>
+                <div class="form-group">
+                  <%= f.label field, 'E-mail' %>
+                  <%= f.email_field field, class: 'form-control' %>
+                </div>
+            <% end -%>
+            <%= hidden_field('user', 'role', :value => @role) %>
+          </div>
+          <div class="box-footer">
+            <%= f.button :submit, t("devise.invitations.new.submit_button"), class: 'btn btn-info pull-left' %>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

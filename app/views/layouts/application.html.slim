@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type"
+
+    = display_meta_tags site: 'Свадьба'
+    = csrf_meta_tags
+
+    = javascript_include_tag *webpack_asset_paths('application', extension: 'js')
+    = stylesheet_link_tag *webpack_asset_paths('application', extension: 'css')
+    link href="https://fonts.googleapis.com/css?family=Bad+Script" rel="stylesheet" /
+  body
+
+    p.notice= notice
+    p.alert= alert
+    = yield

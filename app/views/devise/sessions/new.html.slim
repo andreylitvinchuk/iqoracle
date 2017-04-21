@@ -1,0 +1,27 @@
+p.login-box-msg Введите логин и пароль
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+  - flash.each do |key, value|
+    .alert.alert-info.alert-dismissible(class="alert-#{key}")
+      button.close aria-hidden="true" data-dismiss="alert" type="button"  ×
+      strong
+        i.icon.fa.fa-info
+        = value
+  .form-group.has-feedback
+    = f.email_field :email, autofocus: true, class: 'form-control'
+    span.glyphicon.glyphicon-envelope.form-control-feedback
+  .form-group.has-feedback
+    = f.password_field :password, autocomplete: "off", class: 'form-control'
+    span.glyphicon.glyphicon-lock.form-control-feedback
+  .row
+    .col-xs-8
+      .checkbox.icheck
+        - if devise_mapping.rememberable?
+          label
+            .icheckbox_square-blue
+              = f.check_box :remember_me
+            | Запомнить меня
+      = render "devise/shared/links"
+    .col-xs-4
+      = f.submit "Войти", class: 'btn btn-primary btn-block btn-flat'
+

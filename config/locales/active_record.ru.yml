@@ -1,0 +1,12 @@
+---
+ru:
+  activerecord:
+    models:
+    attributes:
+    errors:
+      models:
+        model_name:
+          attributes:
+            field_name:
+              required:
+              blank:
