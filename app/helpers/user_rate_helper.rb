@@ -1,0 +1,2 @@
+module UserRateHelper
+end

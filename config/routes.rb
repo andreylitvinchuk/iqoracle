@@ -1,11 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      get 'bridge/forexprotools'
     end
   end
-
-  get 'bridge/forexprotools'
 
   get 'frontend/index'
 
@@ -20,6 +17,8 @@ Rails.application.routes.draw do
       post 'come_out',  to: 'authorize#come_out'
 
       get 'forexprotools', to: 'bridge#forexprotools'
+
+      post 'user_rate/create'
     end
   end
 

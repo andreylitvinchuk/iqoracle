@@ -1,24 +1,71 @@
-# README
+# API Documentstion 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+структура данных
+https://drive.google.com/file/d/0B9IdJugjTyzGY0h4dXByUEs4dEE/view?usp=sharing
 
-Things you may want to cover:
+## root:
+```
+/api/v1/
+```
 
-* Ruby version
+## Данные с forexprotools
+полуает данные с forexprotools
+```
+GET: /api/v1/forexprotools/
 
-* System dependencies
+```
 
-* Configuration
+```
+{
+    action: 'refresher',
+    pairs: '1,2,3,',
+    timeframe=10
+}
+```
 
-* Database creation
+## Прогноз пользователя
+### Создание
+``` 
+POST: /api/v1/user_rate/
+```
+user_id
+: id пользвователя
 
-* Database initialization
+event_id
+: id события
 
-* How to run the test suite
+rate_points
+: количество поинтов, на котороые играет пользователь
+ 
+rate_type
+: тип ставки, 'binary'/'agregate'
 
-* Services (job queues, cache servers, search engines, etc.)
+rate_value
+: значение ставки
 
-* Deployment instructions
+rate_direction
+: направление ставки, 'up'/'down'
 
-* ...
+возможные ответы:
+```
+{
+    "status": "error",
+    "message": "User doesn't have enought points",
+    "timestamp": "2017-04-22T22:40:49.183+03:00"
+}
+```
+```
+{
+    "status": "success",
+    "user": {
+        "id": 1,
+        "rate_points": 4,
+        "email": "test@example.com",
+        "created_at": "2017-04-22T12:01:14.756+03:00",
+        "updated_at": "2017-04-22T22:43:41.571+03:00"
+    },
+    "timestamp": "2017-04-22T22:43:41.577+03:00"
+}
+```
+
+## События
