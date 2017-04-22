@@ -69,3 +69,23 @@ rate_direction
 ```
 
 ## События
+### Все события
+```
+/api/v1/mertixes/:mertix_id/events
+```
+### Предстоящие события
+```
+/api/v1/mertixes/:mertix_id/upcoming_events
+```
+Ответ:
+```
+{
+    "events":
+        [
+            {"id":13,"name":null,"metrix_id":1,"created_at":"2017-04-22T21:17:41.024+03:00","updated_at":"2017-04-22T21:17:41.024+03:00","happen_at":"2017-04-22T00:00:00.000+03:00"},
+            {"id":14,"name":null,"metrix_id":1,"created_at":"2017-04-22T21:17:41.031+03:00","updated_at":"2017-04-22T21:17:41.031+03:00","happen_at":"2017-04-22T02:00:00.000+03:00"},
+            {"id":15,"name":null,"metrix_id":1,"created_at":"2017-04-22T21:17:41.038+03:00","updated_at":"2017-04-22T21:17:41.038+03:00","happen_at":"2017-04-22T04:00:00.000+03:00"}
+        ],
+    "metrix":{"id":1,"name":"USD/EUR","created_at":"2017-04-22T18:20:04.476+03:00","updated_at":"2017-04-22T18:20:04.476+03:00","time_interval":7200}
+}
+```
