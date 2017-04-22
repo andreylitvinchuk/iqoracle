@@ -1,0 +1,2 @@
+class Metrix < ApplicationRecord
+end

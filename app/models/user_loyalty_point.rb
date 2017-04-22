@@ -1,0 +1,2 @@
+class UserLoyaltyPoint < ApplicationRecord
+end

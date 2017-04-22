@@ -10,10 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170313122603) do
+ActiveRecord::Schema.define(version: 20170422072827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "metrix_id"
+    t.integer  "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["metrix_id"], name: "index_events_on_metrix_id", using: :btree
+  end
+
+  create_table "metrixes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_loyalty_points", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "loyalty_points_count"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["user_id"], name: "index_user_loyalty_points_on_user_id", using: :btree
+  end
+
+  create_table "user_rates", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.integer  "rate_points"
+    t.integer  "binary_value"
+    t.json     "agregate_value"
+    t.boolean  "completed"
+    t.boolean  "success"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["event_id"], name: "index_user_rates_on_event_id", using: :btree
+    t.index ["user_id"], name: "index_user_rates_on_user_id", using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,4 +69,7 @@ ActiveRecord::Schema.define(version: 20170313122603) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "events", "metrixes"
+  add_foreign_key "user_rates", "events"
+  add_foreign_key "user_rates", "users"
 end
