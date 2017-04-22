@@ -19,7 +19,10 @@ var config = {
       'webpack-dev-server/client?http://localhost:3808/',
       'webpack/hot/dev-server',
       './webpack/application.js',
-      './webpack/stylesheets/application.scss',
+      // './webpack/stylesheets/application.scss',
+      './webpack/css/main.css',
+      './webpack/css/fonts.css',
+      './webpack/css/reset.css',
     ]
   },
 
