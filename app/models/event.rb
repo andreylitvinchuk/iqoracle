@@ -1,7 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :metrix
-  # enum sale_type: [:sale, :reserv, :rent]  # тип продажи (продажа/резерв/аренда)
+  has_many :user_rates
 
-    scope :upcoming, -> { where("happen_at > ?", DateTime.now).order(happen_at: :asc)  }
+  scope :default, -> { order(happen_at: :asc) }
+  scope :upcoming, -> { where("happen_at > ?", DateTime.now).order(happen_at: :asc) }
 
 end

@@ -4,11 +4,9 @@ class Api::V1::BridgeController < ActionController::API
     uri.query = URI.encode_www_form(forexprotools_params)
 
     res = Net::HTTP.get_response(uri)
-    respond_to do |format|
-      format.json {
-        render json: res.body
-      }
-    end
+
+    render json: res.body
+
   end
 
   private

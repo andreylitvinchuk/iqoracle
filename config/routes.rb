@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-    end
-  end
 
   get 'frontend/index'
 
@@ -19,6 +15,12 @@ Rails.application.routes.draw do
       get 'forexprotools', to: 'bridge#forexprotools'
 
       post 'user_rate/create'
+
+      resources :metrixes do
+        get 'events', to: 'events#index'
+        get 'upcoming_events', to: 'events#upcoming'
+      end
+
     end
   end
 
