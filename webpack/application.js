@@ -1,6 +1,9 @@
-require('./utils/vanilla-ujs');
+// require('./utils/vanilla-ujs');
 // require('./utils/mountComponents');
-require('./js/run');
+
 require('./js/main');
+require('./js/run');
+
+import Handlebars from 'handlebars'
 
 console.log("Hello world!");
