@@ -4,4 +4,5 @@ class UserRate < ApplicationRecord
 
   enum rate_type: [:binary, :agregate]  # тип ставки
   enum rate_direction: [:up, :down]  # направление ставки
+
 end

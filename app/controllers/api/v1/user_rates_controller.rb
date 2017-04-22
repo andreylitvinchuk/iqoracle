@@ -1,4 +1,22 @@
-class Api::V1::UserRateController < ActionController::API
+class Api::V1::UserRatesController < ActionController::API
+  def binary
+    event = Event.find(params[:event_id])
+    render json:{
+        user_rates: event.user_rates.binary,
+        event: event,
+        timestamp: DateTime.now
+    }
+  end
+
+  def agregate
+    event = Event.find(params[:event_id])
+    render json:{
+        user_rates: event.user_rates.agregate,
+        event: event,
+        timestamp: DateTime.now
+    }
+  end
+
   def create
     res = UserRate::Create.call({
         user: current_user,

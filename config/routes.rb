@@ -14,11 +14,16 @@ Rails.application.routes.draw do
 
       get 'forexprotools', to: 'bridge#forexprotools'
 
-      post 'user_rate/create'
+      post 'user_rates/create'
 
       resources :metrixes do
         get 'events', to: 'events#index'
         get 'upcoming_events', to: 'events#upcoming'
+      end
+
+      resources :events do
+        get 'user_rates/binary', to: 'user_rates#binary'
+        get 'user_rates/agregate', to: 'user_rates#agregate'
       end
 
     end
