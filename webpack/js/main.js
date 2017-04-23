@@ -69,53 +69,21 @@ $(document).ready(function(){
     });
 
 
-    $('#chart').each(function(){
+    $('#chartdiv').each(function(){
       var w = $(this).parent().width(),
           h = $(this).parent().height()-(($(this).parent().height()/100)*4);
       $(this).attr("height", h);
       $(this).attr("width", w);
+      $(this).css("height", h);
+      $(this).css("width", w);
     });
 
-    var data = {
-        "1": {
-            "row": {
-                "last": "1,0728",
-                "ma": "\u0410\u043a\u0442\u0438\u0432\u043d\u043e \u041f\u043e\u043a\u0443\u043f\u0430\u0442\u044c",
-                "ma_class": "greenFont",
-                "clock": " <\/span>"
-            },
-            "arrowBoxClass": "noneArrow",
-            "summaryLast": "2",
-            "summaryName": "EUR\/USD",
-            "summaryNameAlt": "EUR\/USD",
-            "summaryChange": "+0,0011 (+0,10%)",
-            "summaryChangeClass": "greenFont",
-            "technicalSummary": "\u0410\u043a\u0442\u0438\u0432\u043d\u043e \u041f\u043e\u043a\u0443\u043f\u0430\u0442\u044c",
-            "technicalSummaryClass": "buy",
-            "maBuy": 12,
-            "maSell": 0,
-            "tiBuy": 9,
-            "tiSell": 0
-        },
-        "time": "2017-04-22 08:50:15 GMT"
-    };
 
-
-    var series = new TimeSeries();
-
-    function renderChart(){
-      var chart = new SmoothieChart({millisPerPixel:20,grid:{fillStyle:'transparent',verticalSections:10},labels:{disabled:true, fillStyle: '#000'},timestampFormatter:SmoothieChart.timeFormatter}),
-        summary = data["1"].summaryLast;
-
-      summary = parseInt(summary.replace(",", "."));
-
-      series.append("2017-04-22 08:50:15 GMT", 1);
-
-      canvas = document.getElementById('chart'),
-
-      chart.addTimeSeries(series, {lineWidth:2,strokeStyle:'#2DA2E0', fillStyle: 'rgba(45, 162, 224, .2)'});
-      chart.streamTo(canvas, 2000);
+    function getRandomArbitary(min, max){
+      return Math.random() * (max - min) + min;
     }
 
-    setInterval(renderChart, 5000)
+    $(".up_btn").on("click", function(){
+      
+    });
 });
