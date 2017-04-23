@@ -45,86 +45,88 @@ $(document).ready(function(){
     a_last = a;
     $(".table_tools tr.active td:last-child").html(a);
   }
+  
+var chart, chart_si;
+  function renderChart(){
+    chart = AmCharts.makeChart("chartdiv", {
 
-  function setThresholds() {
+      type: "stock",
+      "theme": "none",
+      pathToImages: "http://www.amcharts.com/lib/3/images/",
+      glueToTheEnd: false,
 
+      categoryAxesSettings: {
+        minPeriod: "mm"
+      },
+
+      dataSets: [{
+        color: "#2DA2E0",
+        fieldMappings: [{
+          fromField: "value",
+          toField: "value"
+        }, {
+          fromField: "volume",
+          toField: "volume"
+        }],
+
+        dataProvider: chartData,
+        categoryField: "date"
+      }],
+
+      panels: [{
+
+          stockGraphs: [{
+            id: "g1",
+            valueField: "value",
+            type: "smoothedLine",
+            lineThickness: 2,
+            bullet: "round"
+          }],
+              showCategoryAxis: false,
+              title: "",
+              percentHeight: 70,
+
+
+          valueAxes: [{
+            guides: [{
+              value: 1100,
+              position: "right",
+              dashLength: 5
+            }, {
+              value: 1550,
+              position: "right",
+              dashLength: 5
+            }]
+          }]
+        }],
+
+      chartScrollbarSettings: {
+        graph: "g1",
+        usePeriod: "10mm",
+        position: "bottom"
+      },
+
+      chartCursorSettings: {
+        valueBalloonsEnabled: true
+      },
+
+      panelsSettings: {
+        usePrefixes: true
+      }
+    });
+
+    chart_si = setInterval(function() {
+      // add data point
+      addDataPoint();
+
+      // update indictors
+      chart.panels[0].valueAxes[0].guides[0].value = Math.round(Math.random() * 500) + 1000;
+      chart.panels[0].valueAxes[0].guides[1].value = chart.panels[0].valueAxes[0].guides[0].value + Math.round(Math.random() * 400) + 200;
+
+      chart.validateData();
+    }, 1000);
   }
 
-  var chart = AmCharts.makeChart("chartdiv", {
+  renderChart();
 
-    type: "stock",
-    "theme": "none",
-    pathToImages: "http://www.amcharts.com/lib/3/images/",
-    glueToTheEnd: false,
-
-    categoryAxesSettings: {
-      minPeriod: "mm"
-    },
-
-    dataSets: [{
-      color: "#2DA2E0",
-      fieldMappings: [{
-        fromField: "value",
-        toField: "value"
-      }, {
-        fromField: "volume",
-        toField: "volume"
-      }],
-
-      dataProvider: chartData,
-      categoryField: "date"
-    }],
-
-    panels: [{
-
-        stockGraphs: [{
-          id: "g1",
-          valueField: "value",
-          type: "smoothedLine",
-          lineThickness: 2,
-          bullet: "round"
-        }],
-            showCategoryAxis: false,
-            title: "",
-            percentHeight: 70,
-
-
-        valueAxes: [{
-          guides: [{
-            value: 1100,
-            position: "right",
-            dashLength: 5
-          }, {
-            value: 1550,
-            position: "right",
-            dashLength: 5
-          }]
-        }]
-      }],
-
-    chartScrollbarSettings: {
-      graph: "g1",
-      usePeriod: "10mm",
-      position: "bottom"
-    },
-
-    chartCursorSettings: {
-      valueBalloonsEnabled: true
-    },
-
-    panelsSettings: {
-      usePrefixes: true
-    }
-  });
-
-  setInterval(function() {
-    // add data point
-    addDataPoint();
-
-    // update indictors
-    chart.panels[0].valueAxes[0].guides[0].value = Math.round(Math.random() * 500) + 1000;
-    chart.panels[0].valueAxes[0].guides[1].value = chart.panels[0].valueAxes[0].guides[0].value + Math.round(Math.random() * 400) + 200;
-
-    chart.validateData();
-  }, 2000);
 })

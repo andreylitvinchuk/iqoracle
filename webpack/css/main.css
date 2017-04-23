@@ -655,6 +655,13 @@ body
   background-size: 28px;
   display: inline-block;
 }
+.container .sidebar .sidebar_block .score.small{
+  font-size: 16px;
+  background-size: 20px;
+  line-height: 20px;
+  background-position: left top;
+  padding-left: 30px;
+}
 .container .sidebar .sidebar_block .skill{
   position: relative;
   margin-left: 30px;
@@ -688,7 +695,7 @@ body
 .container .sidebar .sidebar_block .up_btn,
 .container .sidebar .sidebar_block .down_btn{
   width: 125px;
-  height: 80px;
+  height: 50px;
 
   margin-top: 0;
   margin-bottom: 25px;
