@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create_with(password:'testtest').find_or_create_by(email: 'test@example.com')
-Metrix.find_or_create_by(name: 'USD/EUR')
+Metrix.create_with(pair_id:1).find_or_create_by(name: 'USD/EUR')

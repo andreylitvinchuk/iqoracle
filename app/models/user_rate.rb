@@ -5,4 +5,12 @@ class UserRate < ApplicationRecord
   enum rate_type: [:binary, :agregate]  # тип ставки
   enum rate_direction: [:up, :down]  # направление ставки
 
+  def check_truth
+    if self.event.try(:metrix_value)
+
+    else
+      false
+    end
+  end
+
 end

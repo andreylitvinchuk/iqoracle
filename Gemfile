@@ -15,6 +15,7 @@ gem 'russian', '~> 0.6'
 gem 'meta-tags', '~> 2.4.0'
 gem 'kaminari', '~> 0.17'
 gem 'ransack', '~> 1.8.2'
+gem 'sidekiq'
 
 # devops
 gem 'mina'
@@ -33,6 +34,7 @@ gem 'react-rails'
 gem 'foreman'
 gem 'listen', '~> 3.0.5'
 gem 'inline_svg', '~> 1.2.0'
+gem 'oanda_api'
 
 # standard
 gem 'pg', '~> 0.18'

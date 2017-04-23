@@ -1,5 +1,5 @@
 set :domain, '92.53.104.143'
-set :deploy_to, '/home/deployer/apps/wedding-catalog-staging'
-set :repository, 'git@gitlab.com:top-units/wedding-catalog.git'
-set :branch, 'development'
+set :deploy_to, '/home/deployer/apps/iqoracle'
+set :repository, 'git@bitbucket.org:iqoracle/hackaton.git'
+set :branch, 'master'
 set :user, 'deployer'

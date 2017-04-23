@@ -1,272 +1,281 @@
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>CS</title>
-		<!--<link rel="stylesheet" href="css/reset.css">-->
-		<!--<link rel="stylesheet" href="css/main.css">-->
+<head>
+  <meta charset="utf-8">
+  <title>Game Option</title>
+  <!--<link rel="stylesheet" href="css/reset.css">-->
+  <!--<link rel="stylesheet" href="css/main.css">-->
 
-		<!--<script src="js/libs/jquery/jquery-3.2.0.min.js"></script>-->
-		<!--<script src="js/libs/handlebars/handlebars-v4.0.5.js"></script>-->
-		<!--<script src="js/libs/smoothie/smoothie.js"></script>-->
-		<!--<script type="text/javascript" src="js/main.js"></script>-->
-	</head>
-	<body>
-		<div class="wrapper">
-			<div class="header">
-				<a href="#" class="logo_top"></a>
-				<div class="online_counter">123 online</div>
-				<input type="checkbox" id="sound_check" checked hidden>
-				<label class="sound" for="sound_check"></label>
-				<div class="profile drop-menu_parent">
-					<img src="file/img/avatar.png" class="usr_avatar">
-					<ul class="drop-menu right">
-						<div class="arrow"></div>
-						<li class="disable">Alex Dvor</li>
-						<li>
-							Настройки
-						</li>
-						<li>
-							Выход
-						</li>
-					</ul>
-				</div>
-				<div class="btn blue">Управление баллами</div>
-				<div class="drop-menu_parent right tooltip_parent">
-					<div class="btn blue ico_skill">25</div>
-					<div class="tooltip black bottom">
-						Ваши баллы
-					</div>
-				</div>
-				<div class="rate_balance tooltip_parent">
-					2568
-					<div class="tooltip black bottom">
-						Ваш опыт
-					</div>
-				</div>
-				<div class="drop_btn drop-menu_parent">
-					<ul class="drop-menu right">
-						<div class="arrow"></div>
-						<li>РЕЙТИНГ</li>
-						<li>ПОДДЕРЖКА</li>
-					</ul>
-				</div>
-			</div>
-			<div class="container">
-				<div class="content">
-					<div class="plot_container">
-						<!-- <div class="bet up" style="top:236px">
-							<div class="text">25.87</div>
-						</div>
-						<div class="bet down" style="top:436px">
-							<div class="text">25.87</div>
-						</div>
-						<div class="line_time start" style="left:336px">
-							<div class="label"></div>
-						</div>
-						<div class="line_time finish" style="left:436px">
-							<div class="label"></div>
-						</div>
-						<div class="chances_line">
-							<div class="lower" data-val="66" id="chancesLine_lower"><div class="text">LOWER 66%</div></div>
-							<div class="higher tooltip_parent" data-val="34" id="chancesLine_higher">
-								<div class="text">HIGHER 34%</div>
-								<div class="tooltip black right">
-									33% of users are now betting that<br>
-									the rate will be Higher.
-								</div>
-							</div>
-						</div> -->
-						 <canvas id="chart"></canvas>
-					</div>
-				</div>
-				<div class="sidebar">
-					<div class="sidebar_block border_top">
-						<div class="title">Инструменты</div>
-						<table class="table_tools">
-							<tr>
-								<td>EUR/USD</td>
-								<td>1.07021</td>
-							</tr>
-							<tr>
-								<td>Gold</td>
-								<td>1285.58</td>
-							</tr>
-							<tr>
-								<td>Dow Jones</td>
-								<td>20506</td>
-							</tr>
-							<tr>
-								<td>EUR/USD</td>
-								<td>0.98</td>
-							</tr>
-							<tr>
-								<td>USD/RUB</td>
-								<td>0.4299</td>
-							</tr>
-						</table>
-					</div>
-					<div class="sidebar_block">
-						<div class="title question">
-							доход
-							<div class="tooltip_parent">
-								<div class="tooltip black top">
-									В случаи победы<br>
-									вы получите очки опыта,<br>
-									чем больше у вас очков,<br>
-									тем выше ваш рейтинг.
-								</div>
-							</div>
-						</div>
-						<div class="return_val">
-							3
-						</div>
-					</div>
-					<div class="sidebar_block">
-						<div class="row">
-							<div class="up_btn"></div>
-							<div class="down_btn"></div>
-						</div>
-					</div>
-					<div class="sidebar_block border_top">
-						<div class="title">История</div>
-						<div class="text">
-							История ваших последних действий:
-						</div>
-					</div>
-					<div class="sidebar_block">
-						<div class="bet-table">
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="up">USD/EUR</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-							<div class="bet-table_row">
-								<div class="bet-table_left">
-									<span class="down">Gold</span>
-								</div>
-								<div class="bet-table_right">
-									2 минуты
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
-</html>
+  <!--<script src="js/libs/jquery/jquery-3.2.0.min.js"></script>-->
+  <!-- <script src="js/libs/handlebars/handlebars-v4.0.5.js"></script> -->
+  <!--<script src="js/libs/amcharts.js"></script>-->
+  <!--<script src="js/libs/serial.js"></script>-->
+  <!--<script src="js/libs/light.js"></script>-->
+  <!--<script src="js/libs/amstock.js"></script>-->
+  <!--<script type="text/javascript" src="js/main.js"></script>-->
+  <!--<script type="text/javascript" src="js/charts.js"></script>-->
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <a href="#" class="logo_top"></a>
+    <div class="online_counter">123 online</div>
+    <input type="checkbox" id="sound_check" checked hidden>
+    <label class="sound" for="sound_check"></label>
+    <div class="profile drop-menu_parent">
+      <img src="file/img/avatar.png" class="usr_avatar">
+      <ul class="drop-menu right">
+        <div class="arrow"></div>
+        <li class="disable">Alex Dvor</li>
+        <li>
+          Настройки
+        </li>
+        <li>
+          Выход
+        </li>
+      </ul>
+    </div>
+    <div class="btn blue">Управление баллами</div>
+    <div class="drop-menu_parent right tooltip_parent">
+      <div class="btn blue ico_skill">5</div>
+      <div class="tooltip black bottom">
+        Ваши жетоны
+      </div>
+    </div>
+    <div class="rate_balance tooltip_parent">
+      2568
+      <div class="tooltip black bottom">
+        Ваш опыт
+      </div>
+    </div>
+    <div class="drop_btn drop-menu_parent">
+      <ul class="drop-menu right">
+        <div class="arrow"></div>
+        <li>РЕЙТИНГ</li>
+        <li>ПОДДЕРЖКА</li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="content">
+      <div class="plot_container">
+        <!-- <div class="bet up" style="top:236px">
+          <div class="text">25.87</div>
+        </div>
+        <div class="bet down" style="top:436px">
+          <div class="text">25.87</div>
+        </div>
+        <div class="line_time start" style="left:336px">
+          <div class="label"></div>
+        </div>
+        <div class="line_time finish" style="left:436px">
+          <div class="label"></div>
+        </div>
+        <div class="chances_line">
+          <div class="lower" data-val="66" id="chancesLine_lower"><div class="text">LOWER 66%</div></div>
+          <div class="higher tooltip_parent" data-val="34" id="chancesLine_higher">
+            <div class="text">HIGHER 34%</div>
+            <div class="tooltip black right">
+              33% of users are now betting that<br>
+              the rate will be Higher.
+            </div>
+          </div>
+        </div> -->
+        <div id="chartdiv"></div>
+      </div>
+    </div>
+    <div class="sidebar">
+      <div class="sidebar_block border_top">
+        <div class="title">Инструменты</div>
+        <table class="table_tools">
+          <tr class="active">
+            <td>EUR/USD</td>
+            <td>1.07021</td>
+          </tr>
+          <tr>
+            <td>Gold</td>
+            <td>1285.58</td>
+          </tr>
+          <tr>
+            <td>Dow Jones</td>
+            <td>20506</td>
+          </tr>
+          <tr>
+            <td>EUR/USD</td>
+            <td>0.98</td>
+          </tr>
+          <tr>
+            <td>USD/RUB</td>
+            <td>0.4299</td>
+          </tr>
+        </table>
+      </div>
+      <div class="sidebar_block">
+        <div class="title question">
+          ДЛЯ ИГРЫ ИСПОЛЬЗУЙТЕ
+          <div class="tooltip_parent">
+            <div class="tooltip black top">
+              В случаи победы<br>
+              вы получите очки опыта,<br>
+              чем больше у вас очков,<br>
+              тем выше ваш рейтинг.
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="score small">
+            1 жетон
+          </div>
+        </div>
+      </div>
+      <div class="sidebar_block">
+        <div class="title question">
+          ВЫ ЗАРАБОТАЕТЕ
+          <div class="tooltip_parent">
+            <div class="tooltip black top">
+              В случаи победы<br>
+              вы получите очки опыта,<br>
+              чем больше у вас очков,<br>
+              тем выше ваш рейтинг.
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="score">
+            3
+          </div>
+          <div class="skill">
+            16
+          </div>
+        </div>
+      </div>
+      <div class="sidebar_block">
+        <div class="row">
+          <div class="up_btn"></div>
+          <div class="down_btn"></div>
+        </div>
+      </div>
+      <div class="sidebar_block border_top">
+        <div class="title">История</div>
+      </div>
+      <div class="sidebar_block">
+        <div class="bet-table">
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="down">Gold</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
+          <div class="bet-table_row">
+            <div class="bet-table_left">
+              <span class="up">USD/EUR</span>
+            </div>
+            <div class="bet-table_right">
+              2 минуты
+            </div>
+          </div>
